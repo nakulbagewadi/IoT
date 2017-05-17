@@ -1,0 +1,27 @@
+<html>
+<title>IoT: Final project</title>
+  <head>
+  <h1>Sign In</h1>
+  </head>
+  <body>  
+  <form action="{{ url_for('login') }}" method="POST" name="LOGIN">
+      {{ form.hidden_tag() }}
+      <p>
+          Enter your username:<br>
+          {{ form.username(size=20) }}<br>
+          {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br>
+      </p>
+      <p>
+          Enter your password:<br>
+          {{ form.password(size=20) }}<br>
+          {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br>
+      </p>
+      <p><input type="submit" value="Sign In"></p>
+      {{ form.csrf_token }}
+  </form>
+  </body>
+</html>

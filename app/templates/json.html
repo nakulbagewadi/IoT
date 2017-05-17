@@ -1,0 +1,11 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+<title>{{ title }}</title>
+{% block content %}
+  <h1>Sensor Data</h1>
+  <h3>Sensor data displayed in JSON format from DB</h3>
+      <p>
+          {{ json|tojson|safe }}
+      </p>
+{% endblock %}

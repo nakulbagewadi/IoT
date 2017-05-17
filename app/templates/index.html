@@ -1,0 +1,22 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+<title>{{ title }}</title>
+{% block content %}
+  <h1>Sensor Types</h1>
+  <h3>Select functionality to enable</h3>
+  <h5>Then press 'Submit' to start data collection</h5>
+  <form action="{{ url_for('index') }}" method="POST" name="SENSORS">
+      {{ form.hidden_tag() }}
+      <p>
+          {{ form.temperature }} Display Temperature <br>            		  {{ form.humidity }} Display Humidity <br>
+          {{ form.gas }} Enable Gas Sensor <br>
+          {{ form.flame }} Enable Flame Sensor <br>
+          {{ form.raindrop }} Enable Rain drop Sensor <br>
+          {{ form.emergency }} Enable Emergency switch <br>
+          {{ form.motion }} Enable Motion Sensor <br>
+      </p>
+      <p><input type="submit" value="Submit"></p>
+      {{ form.csrf_token }}
+  </form>
+{% endblock %}

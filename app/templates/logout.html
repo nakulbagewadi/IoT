@@ -1,0 +1,15 @@
+<html>
+  <head>
+  <h1>Log out</h1>
+  </head>
+  <body>  
+  <form action="{{ url_for('logout') }}" method="POST" name="LOGOUT">
+      {{ form.hidden_tag() }}
+      <p>
+          {{ form.logout }} Are you sure you want to logout? <br>            
+      </p>
+      <p><input type="submit" value="Submit"></p>
+      {{ form.csrf_token }}
+  </form>
+  </body>
+</html>

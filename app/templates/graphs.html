@@ -1,0 +1,16 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+<title>{{ title }}</title>
+{% block content %}
+  <h1>Sensor Graphs</h1>
+  <h3>Choose sensor data to display</h3>
+  <form action="{{ url_for('graphs') }}" method="POST" name="GRAPHS">
+      {{ form.hidden_tag() }}
+      <p>
+          {{ form.temperature }} Plot Temperature vs. time <br>            		  {{ form.humidity }} Plot Humidity vs. time <br>
+      </p>
+      <p><input type="submit" value="Show Plots"></p>
+      {{ form.csrf_token }}
+  </form>
+{% endblock %}

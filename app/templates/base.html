@@ -1,0 +1,20 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Home automation & Weather Monitoring</title>
+    {% endif %}
+  </head>
+  <body>
+    <div><b> Weather Station </b>
+    	<a href="/login">Log In</a>
+    	<a href="/index">Index</a>
+    	<a href="/sensor-database">Sensor Database</a>
+    	<a href="/graphs">Graphs</a>
+    	<a href="/logout">Log Out</a>
+    </div>
+    <hr>
+    {% block content %}{% endblock %}
+  </body>
+</html>
